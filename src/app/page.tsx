@@ -473,6 +473,247 @@ function Footer() {
   );
 }
 
+// ── こんな使い方 ────────────────────────────────────────────
+function FamilySVG() {
+  return (
+    <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" className="w-full">
+      {/* 夜空 */}
+      <rect width="400" height="240" fill="#0F172A" />
+      <rect width="400" height="195" fill="#1E293B" />
+      {/* 星 */}
+      {([
+        [40, 22], [85, 42], [150, 14], [220, 30], [310, 18],
+        [360, 38], [130, 58], [280, 48], [60, 70], [340, 65],
+      ] as [number, number][]).map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="1.5" fill="white" opacity={0.7} />
+      ))}
+      {/* 月 */}
+      <circle cx="355" cy="38" r="20" fill="#FDE68A" />
+      <circle cx="365" cy="30" r="16" fill="#1E293B" />
+      {/* 木（左） */}
+      <rect x="28" y="162" width="10" height="40" rx="3" fill="#78350F" />
+      <polygon points="18,168 33,110 48,168" fill="#14532D" />
+      <polygon points="22,148 33,98 44,148" fill="#166534" />
+      {/* 木（右） */}
+      <rect x="362" y="162" width="10" height="40" rx="3" fill="#78350F" />
+      <polygon points="352,168 367,110 382,168" fill="#14532D" />
+      <polygon points="356,148 367,98 378,148" fill="#166534" />
+      {/* 地面 */}
+      <rect x="0" y="195" width="400" height="45" fill="#166534" />
+      <ellipse cx="200" cy="195" rx="200" ry="7" fill="#15803D" />
+      {/* 焚き火の光 */}
+      <ellipse cx="200" cy="196" rx="55" ry="12" fill="#FED7AA" opacity="0.45" />
+      {/* 薪 */}
+      <rect x="176" y="191" width="48" height="8" rx="4" fill="#92400E" />
+      <rect x="188" y="182" width="8" height="22" rx="4" fill="#78350F"
+        transform="rotate(28 192 193)" />
+      <rect x="204" y="182" width="8" height="22" rx="4" fill="#78350F"
+        transform="rotate(-28 208 193)" />
+      {/* 炎（外→内） */}
+      <path d="M200 192 C190 175 186 158 196 144 C193 158 200 153 200 142 C200 153 207 158 204 144 C214 158 210 175 200 192Z" fill="#F97316" />
+      <path d="M200 188 C193 173 191 160 197 150 C196 160 200 156 200 148 C200 156 204 160 203 150 C209 160 207 173 200 188Z" fill="#FCD34D" />
+      <path d="M200 182 C196 171 195 161 199 154 C198 162 200 158 200 153 C200 158 202 162 201 154 C205 161 204 171 200 182Z" fill="#FEF08A" />
+      {/* パパ（左・青） */}
+      <rect x="88" y="148" width="30" height="42" rx="7" fill="#3B82F6" />
+      <rect x="90" y="185" width="11" height="28" rx="5" fill="#1D4ED8" />
+      <rect x="105" y="185" width="11" height="28" rx="5" fill="#1D4ED8" />
+      <circle cx="103" cy="133" r="17" fill="#FBBF24" />
+      <path d="M86 129 Q103 117 120 129 Q116 120 103 118 Q90 120 86 129Z" fill="#78350F" />
+      <circle cx="97" cy="132" r="2.5" fill="#1C1917" />
+      <circle cx="109" cy="132" r="2.5" fill="#1C1917" />
+      <path d="M97 141 Q103 146 109 141" stroke="#1C1917" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <path d="M118 158 Q148 163 165 173" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      <path d="M88 158 Q74 168 67 180" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      {/* こども（中央・黄） */}
+      <rect x="186" y="168" width="26" height="30" rx="6" fill="#F59E0B" />
+      <rect x="188" y="194" width="9" height="22" rx="4" fill="#D97706" />
+      <rect x="201" y="194" width="9" height="22" rx="4" fill="#D97706" />
+      <circle cx="199" cy="155" r="14" fill="#FDE68A" />
+      <path d="M185 153 Q199 142 213 153 Q209 144 199 142 Q189 144 185 153Z" fill="#92400E" />
+      <circle cx="194" cy="154" r="2" fill="#1C1917" />
+      <circle cx="204" cy="154" r="2" fill="#1C1917" />
+      <path d="M194 163 Q199 168 204 163" stroke="#1C1917" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d="M186 174 Q176 166 169 158" stroke="#FDE68A" strokeWidth="6" strokeLinecap="round" fill="none" />
+      <path d="M212 174 Q222 166 229 158" stroke="#FDE68A" strokeWidth="6" strokeLinecap="round" fill="none" />
+      {/* ママ（右・ピンク） */}
+      <rect x="282" y="148" width="30" height="42" rx="7" fill="#EC4899" />
+      <rect x="284" y="185" width="11" height="28" rx="5" fill="#9D174D" />
+      <rect x="299" y="185" width="11" height="28" rx="5" fill="#9D174D" />
+      <circle cx="297" cy="133" r="17" fill="#FBBF24" />
+      <path d="M280 129 Q297 117 314 129 Q310 120 297 118 Q284 120 280 129Z" fill="#92400E" />
+      <rect x="279" y="129" width="6" height="22" rx="3" fill="#92400E" />
+      <rect x="315" y="129" width="6" height="22" rx="3" fill="#92400E" />
+      <circle cx="291" cy="132" r="2.5" fill="#1C1917" />
+      <circle cx="303" cy="132" r="2.5" fill="#1C1917" />
+      <path d="M291 141 Q297 146 303 141" stroke="#1C1917" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <path d="M282 158 Q252 163 235 173" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      <path d="M312 158 Q326 168 333 180" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
+function FriendsSVG() {
+  return (
+    <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" className="w-full">
+      {/* 夕暮れ空 */}
+      <rect width="400" height="240" fill="#FFF7ED" />
+      <rect width="400" height="195" fill="#FFEDD5" />
+      <rect width="400" height="100" fill="#FED7AA" opacity="0.6" />
+      {/* 夕日 */}
+      <circle cx="340" cy="90" r="38" fill="#FCD34D" opacity="0.55" />
+      {/* 雲 */}
+      <ellipse cx="80" cy="48" rx="38" ry="13" fill="white" opacity="0.85" />
+      <ellipse cx="100" cy="42" rx="24" ry="11" fill="white" opacity="0.85" />
+      <ellipse cx="240" cy="32" rx="28" ry="10" fill="white" opacity="0.7" />
+      {/* 地面 */}
+      <rect x="0" y="195" width="400" height="45" fill="#86EFAC" />
+      <ellipse cx="200" cy="195" rx="200" ry="7" fill="#4ADE80" />
+      {/* BBQグリル */}
+      {/* ボウル */}
+      <path d="M168 168 Q200 192 232 168" fill="#4B5563" />
+      <ellipse cx="200" cy="168" rx="32" ry="10" fill="#6B7280" />
+      {/* 脚 */}
+      <line x1="184" y1="178" x2="177" y2="210" stroke="#374151" strokeWidth="4" strokeLinecap="round" />
+      <line x1="216" y1="178" x2="223" y2="210" stroke="#374151" strokeWidth="4" strokeLinecap="round" />
+      <line x1="200" y1="178" x2="200" y2="213" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
+      {/* 横棒 */}
+      <line x1="179" y1="198" x2="221" y2="198" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
+      {/* 網 */}
+      <ellipse cx="200" cy="157" rx="32" ry="9" fill="#374151" />
+      <ellipse cx="200" cy="157" rx="28" ry="7" fill="none" stroke="#6B7280" strokeWidth="1.5" />
+      <line x1="172" y1="157" x2="228" y2="157" stroke="#6B7280" strokeWidth="1.5" />
+      <line x1="184" y1="151" x2="184" y2="163" stroke="#6B7280" strokeWidth="1.5" />
+      <line x1="200" y1="150" x2="200" y2="164" stroke="#6B7280" strokeWidth="1.5" />
+      <line x1="216" y1="151" x2="216" y2="163" stroke="#6B7280" strokeWidth="1.5" />
+      {/* 食材 */}
+      <ellipse cx="189" cy="156" rx="8" ry="5" fill="#92400E" />
+      <ellipse cx="211" cy="156" rx="8" ry="5" fill="#92400E" />
+      {/* 煙 */}
+      <path d="M189 150 Q186 143 189 136 Q192 130 189 123" stroke="#D1D5DB" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.7" />
+      <path d="M200 148 Q197 141 200 134 Q203 128 200 121" stroke="#D1D5DB" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.6" />
+      {/* 人物1（赤シャツ） */}
+      <rect x="38" y="146" width="26" height="44" rx="7" fill="#EF4444" />
+      <rect x="40" y="186" width="10" height="26" rx="5" fill="#B91C1C" />
+      <rect x="54" y="186" width="10" height="26" rx="5" fill="#B91C1C" />
+      <circle cx="51" cy="131" r="15" fill="#FBBF24" />
+      <path d="M36 128 Q51 117 66 128 Q62 119 51 117 Q40 119 36 128Z" fill="#1C1917" />
+      <circle cx="46" cy="130" r="2.2" fill="#1C1917" />
+      <circle cx="56" cy="130" r="2.2" fill="#1C1917" />
+      <path d="M46 139 Q51 144 56 139" stroke="#1C1917" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      {/* 右腕（カップ上げ） */}
+      <path d="M64 157 Q84 140 100 124" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      <rect x="97" y="112" width="9" height="13" rx="2" fill="#F9A8D4" />
+      {/* 左腕 */}
+      <path d="M38 157 Q26 164 20 174" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      {/* 人物2（緑シャツ） */}
+      <rect x="108" y="146" width="26" height="44" rx="7" fill="#22C55E" />
+      <rect x="110" y="186" width="10" height="26" rx="5" fill="#15803D" />
+      <rect x="124" y="186" width="10" height="26" rx="5" fill="#15803D" />
+      <circle cx="121" cy="131" r="15" fill="#FDE68A" />
+      <path d="M106 128 Q121 117 136 128 Q132 119 121 117 Q110 119 106 128Z" fill="#92400E" />
+      <circle cx="116" cy="130" r="2.2" fill="#1C1917" />
+      <circle cx="126" cy="130" r="2.2" fill="#1C1917" />
+      <path d="M116 139 Q121 144 126 139" stroke="#1C1917" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d="M134 157 Q150 139 163 122" stroke="#FDE68A" strokeWidth="7" strokeLinecap="round" fill="none" />
+      <rect x="160" y="110" width="9" height="13" rx="2" fill="#7DD3FC" />
+      <path d="M108 157 Q96 148 88 140" stroke="#FDE68A" strokeWidth="7" strokeLinecap="round" fill="none" />
+      {/* 人物3（紫シャツ） */}
+      <rect x="266" y="146" width="26" height="44" rx="7" fill="#A855F7" />
+      <rect x="268" y="186" width="10" height="26" rx="5" fill="#7E22CE" />
+      <rect x="282" y="186" width="10" height="26" rx="5" fill="#7E22CE" />
+      <circle cx="279" cy="131" r="15" fill="#FBBF24" />
+      <path d="M264 128 Q279 117 294 128 Q290 119 279 117 Q268 119 264 128Z" fill="#78350F" />
+      <rect x="263" y="128" width="5" height="18" rx="2" fill="#78350F" />
+      <rect x="291" y="128" width="5" height="18" rx="2" fill="#78350F" />
+      <circle cx="274" cy="130" r="2.2" fill="#1C1917" />
+      <circle cx="284" cy="130" r="2.2" fill="#1C1917" />
+      <path d="M274 139 Q279 144 284 139" stroke="#1C1917" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d="M266 157 Q250 139 238 122" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      <rect x="230" y="110" width="9" height="13" rx="2" fill="#FCD34D" />
+      <path d="M292 157 Q304 148 312 138" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      {/* 人物4（オレンジシャツ） */}
+      <rect x="336" y="146" width="26" height="44" rx="7" fill="#F97316" />
+      <rect x="338" y="186" width="10" height="26" rx="5" fill="#C2410C" />
+      <rect x="352" y="186" width="10" height="26" rx="5" fill="#C2410C" />
+      <circle cx="349" cy="131" r="15" fill="#FBBF24" />
+      <path d="M334 128 Q349 117 364 128 Q360 119 349 117 Q338 119 334 128Z" fill="#1C1917" />
+      <circle cx="344" cy="130" r="2.2" fill="#1C1917" />
+      <circle cx="354" cy="130" r="2.2" fill="#1C1917" />
+      <path d="M344 139 Q349 144 354 139" stroke="#1C1917" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      <path d="M336 157 Q316 140 302 124" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+      <rect x="297" y="112" width="9" height="13" rx="2" fill="#86EFAC" />
+      <path d="M362 157 Q374 164 380 174" stroke="#FBBF24" strokeWidth="7" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
+const scenes = [
+  {
+    number: "01",
+    title: "家族で楽しむ",
+    color: "from-amber-50 to-orange-50",
+    border: "border-amber-200",
+    badge: "bg-amber-500",
+    svg: <FamilySVG />,
+    points: [
+      "子どもも大人も一緒に楽しめる",
+      "手ぶらOKだから準備ゼロ",
+      "ソラトスで好きな食材を選ぶ買い物も思い出に",
+    ],
+  },
+  {
+    number: "02",
+    title: "友達同士で楽しむ",
+    color: "from-sky-50 to-green-50",
+    border: "border-sky-200",
+    badge: "bg-sky-500",
+    svg: <FriendsSVG />,
+    points: [
+      "気の合う仲間と非日常を",
+      "焚き火を囲んで語り合う夜",
+      "昼でも夜でも盛り上がれる2部制",
+    ],
+  },
+];
+
+function UsageScenes() {
+  return (
+    <section id="scenes" className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-4">
+        <SectionHeading label="こんな使い方" title="どんなシーンにも" />
+        <div className="grid sm:grid-cols-2 gap-8">
+          {scenes.map((scene) => (
+            <div
+              key={scene.number}
+              className={`bg-gradient-to-br ${scene.color} border ${scene.border} rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow`}
+            >
+              {/* イラスト */}
+              <div className="p-4 pb-0">{scene.svg}</div>
+              {/* テキスト */}
+              <div className="p-6 pt-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className={`${scene.badge} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                    {scene.number}
+                  </span>
+                  <h3 className="text-xl font-extrabold text-gray-800">{scene.title}</h3>
+                </div>
+                <ul className="space-y-2">
+                  {scene.points.map((p) => (
+                    <li key={p} className="flex items-start gap-2 text-gray-600 text-sm">
+                      <span className="text-green-500 font-bold mt-0.5">✓</span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── 共通セクション見出し ────────────────────────────────────
 function SectionHeading({
   label,
@@ -508,6 +749,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Features />
+      <UsageScenes />
       <Pricing />
       <Access />
       <Reservation />
