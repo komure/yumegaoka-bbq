@@ -13,7 +13,7 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-14">
-        <span className="font-bold text-green-700 text-lg">🔥 ゆめが丘BBQ</span>
+        <span className="font-bold text-green-700 text-lg">🔥 ベリーBBQ</span>
         <nav className="hidden sm:flex gap-6 text-sm font-medium text-gray-700">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-green-600 transition-colors">
@@ -55,7 +55,7 @@ function Hero() {
           最高の<span className="text-orange-300">炎</span>を囲もう。
         </h1>
         <p className="text-lg sm:text-xl text-green-100 mb-10 leading-relaxed">
-          ゆめが丘BBQは、横浜の自然の中で<br className="hidden sm:block" />
+          ベリーBBQは、横浜の自然の中で<br className="hidden sm:block" />
           気軽に楽しめるバーベキュー場です。<br />
           機材はすべて完備。隣のモールで食材も揃う。
         </p>
@@ -128,7 +128,7 @@ function Features() {
   return (
     <section id="features" className="py-24 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4">
-        <SectionHeading label="おすすめポイント" title="ゆめが丘BBQが選ばれる理由" />
+        <SectionHeading label="おすすめポイント" title="ベリーBBQが選ばれる理由" />
         <div className="grid sm:grid-cols-2 gap-6">
           {features.map((f) => (
             <div
@@ -238,7 +238,7 @@ function Access() {
           {/* 地図プレースホルダー */}
           <div className="rounded-2xl overflow-hidden shadow-lg bg-green-100 aspect-[4/3] flex flex-col items-center justify-center text-center p-8 border-2 border-green-200">
             <span className="text-6xl mb-4">🗺️</span>
-            <p className="font-bold text-green-800 text-lg">ゆめが丘BBQ</p>
+            <p className="font-bold text-green-800 text-lg">ベリーBBQ</p>
             <p className="text-green-700 text-sm mt-1">神奈川県横浜市</p>
             <a
               href="https://maps.google.com/?q=下飯田駅+横浜市"
@@ -466,9 +466,9 @@ function Required() {
 function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-400 py-10 text-center text-sm">
-      <p className="text-white font-bold text-base mb-1">🔥 ゆめが丘BBQ</p>
+      <p className="text-white font-bold text-base mb-1">🔥 ベリーBBQ</p>
       <p>神奈川県横浜市 / 相鉄いずみ野線 下飯田駅 徒歩10分</p>
-      <p className="mt-4 text-xs text-gray-600">© 2025 ゆめが丘BBQ. All rights reserved.</p>
+      <p className="mt-4 text-xs text-gray-600">© 2025 ベリーBBQ. All rights reserved.</p>
     </footer>
   );
 }
